@@ -6,13 +6,13 @@ import json
 app = Flask(__name__)
 
 
-def favorite_colors() -> List[Dict]:
+def bairros() -> List[Dict]:
     config = {
         'user': 'root',
         'password': 'root',
         'host': 'db',
         'port': '3306',
-        'database': 'knights'
+        'database': 'geofusion'
     }
     connection = mysql.connector.connect(**config)
     cursor = connection.cursor()
@@ -26,7 +26,7 @@ def favorite_colors() -> List[Dict]:
 
 @app.route('/')
 def index() -> str:
-    return json.dumps({'favorite_colors': favorite_colors()})
+    return json.dumps({'bairros': bairros()})
 
 
 if __name__ == '__main__':

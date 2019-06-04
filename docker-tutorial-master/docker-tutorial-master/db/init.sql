@@ -1,13 +1,8 @@
-CREATE DATABASE knights;
-use knights;
+CREATE DATABASE geofusion;
+use geofusion;
 
-CREATE TABLE favorite_colors (
-  name VARCHAR(20),
-  color VARCHAR(10)
-);
-
-INSERT INTO favorite_colors
-  (name, color)
-VALUES
-  ('Lancelot', 'blue'),
-  ('Galahad', 'yellow');
+LOAD DATA INFILE "/db/eventos_de_ﬂuxo.csv"
+INTO TABLE eventos_de_ﬂuxo
+COLUMNS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;

@@ -16,8 +16,8 @@ def favorite_colors() -> List[Dict]:
     }
     connection = mysql.connector.connect(**config)
     cursor = connection.cursor()
-    cursor.execute('SELECT * FROM eventos_de_ﬂuxo LIMIT 1')
-    results = [{name: color} for (name, color) in cursor]
+    cursor.execute('SELECT codigo, nome FROM bairros LIMIT 1')
+    results = [{codigo: nome} for (codigo, nome) in cursor]
     cursor.close()
     connection.close()
 

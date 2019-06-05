@@ -16,8 +16,8 @@ def bairros() -> List[Dict]:
     }
     connection = mysql.connector.connect(**config)
     cursor = connection.cursor()
-    cursor.execute('SELECT * FROM favorite_colors')
-    results = [{name: color} for (name, color) in cursor]
+    cursor.execute('SELECT municipio,uf FROM bairros LIMIT 5')
+    results = [{municipio: uf} for (municipio, uf) in cursor]
     cursor.close()
     connection.close()
 

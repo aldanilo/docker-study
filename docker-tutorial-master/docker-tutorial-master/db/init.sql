@@ -1,7 +1,7 @@
 CREATE DATABASE geofusion;
 use geofusion;
 
-LOAD DATA INFILE "/db/bairros.csv"
+LOAD DATA INFILE "/docker-entrypoint-initdb.d/bairros.csv"
 INTO TABLE bairros
 COLUMNS TERMINATED BY ','
 LINES TERMINATED BY '\n'

@@ -1,5 +1,8 @@
-CREATE DATABASE geofusion;
+CREATE DATABASE geofusion
+DEFAULT CHARACTER SET UTF8
+DEFAULT COLLATE utf8_general_ci;
 use geofusion;
+
 
 
 CREATE TABLE bairros (

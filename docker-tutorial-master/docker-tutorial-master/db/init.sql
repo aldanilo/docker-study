@@ -1,8 +1,13 @@
 CREATE DATABASE geofusion;
 use geofusion;
 
-LOAD DATA INFILE "/docker-entrypoint-initdb.d/bairros.csv"
-INTO TABLE bairros
-COLUMNS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-IGNORE 1 LINES;
+CREATE TABLE favorite_colors (
+  name VARCHAR(20),
+  color VARCHAR(10)
+);
+
+INSERT INTO favorite_colors
+  (name, color)
+VALUES
+  ('Lancelot', 'blue'),
+  ('Galahad', 'yellow');
